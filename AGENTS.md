@@ -23,11 +23,19 @@ Key directories and their purpose will be documented here once the codebase is e
 1. **Fork** the repository, then create a feature branch from `main` (e.g. `feat/<short-slug>` or `fix/<short-slug>`).
 2. Make your change, keeping the pull request **focused and small** — one concern per PR.
 3. **Follow existing code style.** Match the conventions already present in the codebase; do not introduce a second style alongside an existing one.
-4. Open a **pull request** to `main` describing what changed and why.
+4. Open a **pull request** to `main` describing what changed and why, then **enable auto-merge** so the PR merges to `main` automatically once checks pass. See [Git Workflow](#git-workflow) for the full steps — there is no manual reviewer-merge step.
 
-### No CI/CD
+## Git Workflow
 
-No CI/CD pipeline is configured yet — there are no automated build, test, or lint gates. **Reviewers validate builds and tests locally** before merging a pull request. When you open a PR, be ready to share the exact commands you ran to verify your change.
+Contributions land on `main` through pull requests with auto-merge enabled. There is no manual reviewer-merge step.
+
+1. **Push to a feature branch.** Create a branch from `main` (e.g. `feat/<short-slug>` or `fix/<short-slug>`), commit your change, and push it to the remote.
+2. **Open a PR against `main`.** Describe what changed and why; keep the PR focused on one concern.
+3. **Enable auto-merge.** Turn on auto-merge on the PR so it merges to `main` automatically once any configured checks pass. No manual merge step is required.
+
+### CI Checks
+
+No CI checks are configured yet — there are currently no automated build, test, or lint gates. CI may be added in the future; when it is, auto-merge will gate on those checks automatically. Until then, be ready to share the exact commands you ran to verify your change locally.
 
 ## License
 
